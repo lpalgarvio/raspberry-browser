@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Monitoring</title>
+    <script type="text/javascript">
+      <!--
+      var reload_url="http://www.raspberrypi.org/";
+      var to = 10000;  // Watchdog timeout: 10s
+      var wd;
+      var ifr;
+      function setup_watchdog()
+      {
+        ifr=document.getElementById("frame1");
+        window.onmessage = function(e) {
+          if (e.data == 'tyrp') {
+            window.clearTimeout(wd);
+            wd = window.setTimeout(wdf,to);
+          }
+        };
+        ifr.src = reload_url;
+        wd = window.setTimeout(wdf,to);
+      }
+      function wdf()
+      {
+        ifr.src = reload_url;
+        wd = window.setTimeout(wdf,to);
+      }
+      // -->
+    </script>
+  </head>
+  <body onload="setup_watchdog()" style="margin: 0; overflow: hidden;">
+    <iframe id="frame1" src="#" 
+      style="position:absolute; left: 0px; width: 100%; top: 0px; height: 100%; margin:0; padding:0; border:0px none transparent;">
+    </iframe>
+  </body>
+</html>
+
